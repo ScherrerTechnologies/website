@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	description: sdcvsdfvf
+	description: Product site
 -->
 <html>
 	<head>
@@ -39,25 +39,40 @@
 					<article id="main">
 						<header>
 							<h2>Products</h2>
-							<p>This Page is under development.</p>
-							<p>Products will be shown here.</p>
+							<p>Find your product here.</p>
+
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Products 1</h3>
-								<p>Description 1.1.</p>
+								<h3>Kayak Watch Mount</h3>
 
-								<p>Description 1.2.</p>
+								<div class="image right">
+										<img id="productImage" src="images/uhrenbock_black_1.jpg" alt="WatchMount">
+
+										<div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+											<button onclick="prevImage()">⬅</button>
+											<button onclick="nextImage()">➡</button>
+										</div>
+								</div>
+								
+								<p>Keep your watch visible and secure on the water with this lightweight 3D-printed watch mount, designed to sit neatly on top of your kayak. Fully customizable text lets you add a personal touch—perfect for names or team branding.</p>
+
+								<p>Available in black, magenta, and transparent green (other colors on request)</p>
+								<p>Price: 20 CHF + shipping cost (international shipping on request)</p>
+
+								<ul class="actions">
+									<li>
+										<a href="mailto:scherrerstefan@bluewin.ch" class="button">
+											Order
+										</a>
+									</li>
+								</ul>
+
+								<div style="clear: both;"></div>
 
 								<hr />
 
-								<h3>Products 2</h3>
-								<p>Description 2.1.</p>
-
-								<p>Description 2.2.</p>
-
-								<hr />
 
 								<h3>Not what you are looking for?</h3>
 								<p>Contact me to discuss your product idea.</p>
@@ -107,9 +122,40 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+			let currentImage = 1;
+			
+			function showImage(index) {
+				const img = document.getElementById("productImage");
+			
+				if (index === 1) {
+					img.src = "images/uhrenbock_black_1.jpg";
+				} else if (index === 2) {
+					img.src = "images/uhrenbock_black_2.jpg";
+				} else if (index === 3) {
+					img.src = "images/uhrenbock_boot_1.jpg";
+				} else if (index === 4) {
+					img.src = "images/uhrenbock_boot_2.jpg";
+				}
+			
+				currentImage = index;
+			}
+			
+			function prevImage() {
+				let newIndex = currentImage - 1;
+				if (newIndex < 1) newIndex = 4; // zurück zum letzten Bild
+				showImage(newIndex);
+			}
+			
+			function nextImage() {
+				let newIndex = currentImage + 1;
+				if (newIndex > 4) newIndex = 1; // zurück zum ersten Bild
+				showImage(newIndex);
+			}
+			</script>
+
 	</body>
 
 </html>
-
 
 
