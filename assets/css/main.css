@@ -2113,10 +2113,12 @@ input, select, textarea {
 			float: right;
 			margin: 0 0 2em 2em;
 			top: 0.25em;
+			
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 15%;
+  			min-width: 150px;
 		}
 
 			.image.left img, .image.right img {
@@ -2418,7 +2420,7 @@ input, select, textarea {
 		box-shadow: inset 0 0 0 2px #fff;
 		color: #fff;
 		cursor: pointer;
-		display: inline-block;
+		display: flex;
 		font-size: 0.8em;
 		font-weight: 600;
 		height: 3.125em;
@@ -2432,6 +2434,8 @@ input, select, textarea {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		align-items: center;
+		justify-content: center;
 	}
 
 		input[type="submit"]:hover,
@@ -3997,3 +4001,6 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+
+
